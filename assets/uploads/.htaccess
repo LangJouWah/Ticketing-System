@@ -1,0 +1,9 @@
+# Prevent direct access to uploaded files
+Deny from all
+
+# Allow access only from the application
+<FilesMatch "\.(jpg|jpeg|png|gif|pdf|txt)$">
+    Order Deny,Allow
+    Deny from all
+    Allow from 127.0.0.1
+</FilesMatch>
